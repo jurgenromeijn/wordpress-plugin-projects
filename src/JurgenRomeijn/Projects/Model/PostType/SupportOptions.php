@@ -5,7 +5,10 @@
 
 namespace JurgenRomeijn\Projects\Model\PostType;
 
-
+/**
+ * This enum contains all options a post type can support.
+ * @package JurgenRomeijn\Projects\Model\PostType
+ */
 abstract class SupportOptions
 {
     const TITLE = "title";
