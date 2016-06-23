@@ -11,9 +11,11 @@ namespace JurgenRomeijn\Projects\Model\PostType;
  */
 abstract class SupportOptions
 {
+
     const TITLE = "title";
     const EDITOR = "editor";
     const THUMBNAIL = "thumbnail";
     const REVISIONS = "revisions";
     const EXCERPT = "excerpt";
+
 }

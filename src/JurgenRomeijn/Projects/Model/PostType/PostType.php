@@ -4,8 +4,6 @@
  */
 
 namespace JurgenRomeijn\Projects\Model\PostType;
-
-
 use JurgenRomeijn\Projects\Model\Rewrite;
 
 /**
@@ -14,6 +12,7 @@ use JurgenRomeijn\Projects\Model\Rewrite;
  */
 class PostType
 {
+
     private $labels;
     private $public;
     private $hasArchive;
@@ -117,5 +116,4 @@ class PostType
         $this->supports = $supports;
     }
 
-    
 }
