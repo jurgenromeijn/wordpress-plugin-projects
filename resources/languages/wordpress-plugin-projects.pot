@@ -1,0 +1,78 @@
+# Copyright (C) 2016 Jurgen Romeijn
+msgid ""
+msgstr ""
+"Project-Id-Version: Portfolio Projects 0.1\n"
+"Report-Msgid-Bugs-To: jurgen.romeijn@gmail.com\n"
+"POT-Creation-Date: 2016-06-25 00:09:12+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-06-25 01:00+0200\n"
+"Last-Translator: Jurgen Romeijn <jurgen.romeijn@gmail.com>\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: src/Service/Helper/ProjectLabelHelper.php:16
+msgid "singularName"
+msgstr "Project"
+
+#: src/Service/Helper/ProjectLabelHelper.php:17
+msgid "name"
+msgstr "Projects"
+
+#: src/Service/Helper/ProjectLabelHelper.php:18
+msgid "addNew"
+msgstr "New project"
+
+#: src/Service/Helper/ProjectLabelHelper.php:19
+msgid "addNewItem"
+msgstr "Add a new project"
+
+#: src/Service/Helper/ProjectLabelHelper.php:20
+msgid "editItem"
+msgstr "Edit project"
+
+#: src/Service/Helper/ProjectLabelHelper.php:21
+msgid "newItem"
+msgstr "New project"
+
+#: src/Service/Helper/ProjectLabelHelper.php:22
+msgid "allItems"
+msgstr "All projects"
+
+#: src/Service/Helper/ProjectLabelHelper.php:23
+msgid "viewItem"
+msgstr "View project"
+
+#: src/Service/Helper/ProjectLabelHelper.php:24
+msgid "searchItems"
+msgstr "Search projects"
+
+#: src/Service/Helper/ProjectLabelHelper.php:25
+msgid "notFound"
+msgstr "No projects found"
+
+#: src/Service/Helper/ProjectLabelHelper.php:26
+msgid "notFoundInTrash"
+msgstr "No projects found in trash"
+
+#: src/Service/Helper/ProjectLabelHelper.php:27
+msgid "parentItemColon"
+msgstr "Projects"
+
+#: src/Service/Helper/ProjectLabelHelper.php:28
+msgid "menuName"
+msgstr "Projects"
+
+#: src/Service/Helper/ProjectPostTypeHelper.php:18
+msgid "projectPostTypeSlug"
+msgstr "projects"
+
+#: src/Service/Helper/ProjectTaxonomyHelper.php:17
+msgid "projectTaxonomySlug"
+msgstr "projects"
+
+#: src/Service/Helper/ProjectTaxonomyHelper.php:18
+msgid "projectTaxonomyType"
+msgstr "Project Types"
