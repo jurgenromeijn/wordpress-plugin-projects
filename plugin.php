@@ -11,7 +11,10 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-require 'autoloader.php';
+require 'autoload.php';
 
+/**
+ * Set up the plugin.
+ */
 $projectService = \JurgenRomeijn\Projects\Service\ProjectService::getInstance();
 $projectService->register();

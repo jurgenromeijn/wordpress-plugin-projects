@@ -6,6 +6,10 @@
 namespace JurgenRomeijn\Projects\Service\Helper;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
+/**
+ * This helper contains all functionality to create labels for a project.
+ * @package JurgenRomeijn\Projects\Service\Helper
+ */
 class ProjectLabelHelper implements ProjectLabelHelperInterface
 {
 
@@ -25,9 +29,17 @@ class ProjectLabelHelper implements ProjectLabelHelperInterface
 
     private static $instance;
 
+    /**
+     * Empty private constructor as this is a application wide component.
+     * ProjectLabelHelper constructor.
+     */
     private function __construct() {}
 
-    public function createLabel()
+    /**
+     * Create the labels used for the project post type.
+     * @return Labels
+     */
+    public function createLabels()
     {
         $labels = new Labels();
 
@@ -48,11 +60,20 @@ class ProjectLabelHelper implements ProjectLabelHelperInterface
         return $labels;
     }
 
+    /**
+     * Translate a given label.
+     * @param $label
+     * @return string
+     */
     private function translateLabel($label)
     {
         return __($label);
     }
 
+    /**
+     * return an instance of this singleton.
+     * @return ProjectLabelHelper
+     */
     public static function getInstance()
     {
         if (self::$instance === null)

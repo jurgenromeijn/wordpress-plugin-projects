@@ -8,6 +8,10 @@ use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
 use JurgenRomeijn\Projects\Model\Rewrite;
 
+/**
+ * This helper contains all functionality to create the post type for a project.
+ * @package JurgenRomeijn\Projects\Service\Helper
+ */
 class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 {
 
@@ -16,16 +20,24 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
     private $labelHelper;
     private static $instance;
 
+    /**
+     * Set up all required components for this helper.
+     * ProjectPostTypeHelper constructor.
+     */
     private function __construct()
     {
         $this->labelHelper = ProjectLabelHelper::getInstance();
     }
 
+    /**
+     * Create the project post type.
+     * @return PostType
+     */
     public function createPostType()
     {
         $projectPostType = new PostType();
 
-        $projectPostType->setLabels($this->labelHelper->createLabel());
+        $projectPostType->setLabels($this->labelHelper->createLabels());
         $projectPostType->setPublic(true);
         $projectPostType->setHasArchive(true);
         $projectPostType->setRewrite(new Rewrite(self::SLUG));
@@ -40,6 +52,10 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
         return $projectPostType;
     }
 
+    /**
+     * return an instance of this singleton.
+     * @return ProjectPostTypeHelper
+     */
     public static function getInstance()
     {
         if (self::$instance === null)

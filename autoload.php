@@ -5,7 +5,12 @@
 
 spl_autoload_register('pluginAutoload');
 
-function pluginAutoload($class) {
+/**
+ * Autoload all classes in the src folder.
+ * @param $class
+ */
+function pluginAutoload($class)
+{
     $prefix = 'JurgenRomeijn\\Projects';
     $base_dir = __DIR__ . '/src/';
 
