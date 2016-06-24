@@ -54,7 +54,7 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 
     /**
      * return an instance of this singleton.
-     * @return ProjectLabelHelper
+     * @return ProjectPostTypeHelper
      */
     public static function getInstance()
     {

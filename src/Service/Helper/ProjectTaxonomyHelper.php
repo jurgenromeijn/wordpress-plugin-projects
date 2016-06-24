@@ -7,6 +7,10 @@ namespace JurgenRomeijn\Projects\Service\Helper;
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
+/**
+ * This helper contains all functionality to create the taxonomy for a project.
+ * @package JurgenRomeijn\Projects\Service\Helper
+ */
 class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 {
 
@@ -15,8 +19,16 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 
     private static $instance;
 
+    /**
+     * Empty private constructor as this is a application wide component.
+     * ProjectTaxonomyHelper constructor.
+     */
     private function __construct() {}
 
+    /**
+     * Create the project post type.
+     * @return PostType
+     */
     public function createTaxonomy()
     {
         $taxonomy = new Taxonomy();
@@ -29,6 +41,10 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
         return $taxonomy;
     }
 
+    /**
+     * return an instance of this singleton.
+     * @return ProjectTaxonomyHelper
+     */
     public static function getInstance()
     {
         if (self::$instance === null)
