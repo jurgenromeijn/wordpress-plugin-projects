@@ -31,7 +31,7 @@ class Taxonomy implements WordpressModelInterface
      */
     public function __construct(
         $hierarchical = true,
-        $label = "type",
+        $label = 'type',
         $public = true,
         Rewrite $rewrite = null)
     {

@@ -11,7 +11,7 @@ use JurgenRomeijn\Projects\Model\Rewrite;
 class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 {
 
-    const SLUG = "projects";
+    const SLUG = 'projects';
 
     private $labelHelper;
     private static $instance;

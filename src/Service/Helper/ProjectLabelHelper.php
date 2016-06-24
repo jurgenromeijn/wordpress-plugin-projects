@@ -9,19 +9,19 @@ use JurgenRomeijn\Projects\Model\PostType\Labels;
 class ProjectLabelHelper implements ProjectLabelHelperInterface
 {
 
-    const NAME_SINGULAR      = "Project";
-    const NAME_PLURAL        = "Projecten";
-    const ADD_NEW            = "Nieuw project";
-    const ADD_NEW_ITEM       = "Voeg nieuw project toe";
-    const EDIT_ITEM          = "Pas project aan";
-    const NEW_ITEM           = "Nieuw Project";
-    const ALL_ITEMS          = "Alle projecten";
-    const VIEW_ITEM          = "Bekijk project";
-    const SEARCH_ITEMS       = "Zoek in projecten";
-    const NOT_FOUND          = "Geen projecten gevonden";
-    const NOT_FOUND_IN_TRASH = "Geen projecten in de vuilnisbak";
-    const PARENT_ITEM_COLON  = "Projecten";
-    const MENU_NAME          = "Projecten";
+    const NAME_SINGULAR      = 'Project';
+    const NAME_PLURAL        = 'Projecten';
+    const ADD_NEW            = 'Nieuw project';
+    const ADD_NEW_ITEM       = 'Voeg nieuw project toe';
+    const EDIT_ITEM          = 'Pas project aan';
+    const NEW_ITEM           = 'Nieuw Project';
+    const ALL_ITEMS          = 'Alle projecten';
+    const VIEW_ITEM          = 'Bekijk project';
+    const SEARCH_ITEMS       = 'Zoek in projecten';
+    const NOT_FOUND          = 'Geen projecten gevonden';
+    const NOT_FOUND_IN_TRASH = 'Geen projecten in de vuilnisbak';
+    const PARENT_ITEM_COLON  = 'Projecten';
+    const MENU_NAME          = 'Projecten';
 
     private static $instance;
 
