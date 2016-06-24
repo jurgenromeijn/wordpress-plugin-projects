@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+use JurgenRomeijn\Projects\Common\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
 use JurgenRomeijn\Projects\Model\Rewrite;
@@ -15,12 +16,12 @@ use JurgenRomeijn\Projects\Model\Rewrite;
 class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 {
 
+    use SingletonTrait;
+
     const SLUG = 'projectPostTypeSlug';
 
     private $translationHelper;
     private $labelHelper;
-
-    private static $instance;
 
     /**
      * Set up all required components for this helper.
@@ -53,19 +54,6 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
         ));
 
         return $projectPostType;
-    }
-
-    /**
-     * return an instance of this singleton.
-     * @return ProjectPostTypeHelper
-     */
-    public static function getInstance()
-    {
-        if (self::$instance === null)
-        {
-            self::$instance = new self();
-        }
-        return self::$instance;
     }
 
 }

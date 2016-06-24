@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+use JurgenRomeijn\Projects\Common\SingletonTrait;
 
 /**
  * This helper contains all functionality for localization of this plugin.
@@ -12,10 +13,10 @@ namespace JurgenRomeijn\Projects\Service\Helper;
 class TranslationHelper implements TranslationHelperInterface
 {
 
+    use SingletonTrait;
+
     const DOMAIN = "wordpress-plugin-projects";
     const PATH_LANGUAGES = '/../../../resources/languages/';
-
-    private static $instance;
 
     /**
      * Empty private constructor as this is a application wide component.
@@ -41,19 +42,6 @@ class TranslationHelper implements TranslationHelperInterface
     public function translate($string)
     {
         return __($string, self::DOMAIN);
-    }
-
-    /**
-     * return an instance of this singleton.
-     * @return TranslationHelper
-     */
-    public static function getInstance()
-    {
-        if (self::$instance === null)
-        {
-            self::$instance = new self();
-        }
-        return self::$instance;
     }
 
 }

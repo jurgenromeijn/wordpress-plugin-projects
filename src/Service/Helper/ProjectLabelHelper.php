@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+use JurgenRomeijn\Projects\Common\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
 /**
@@ -12,6 +13,8 @@ use JurgenRomeijn\Projects\Model\PostType\Labels;
  */
 class ProjectLabelHelper implements ProjectLabelHelperInterface
 {
+
+    use SingletonTrait;
 
     const NAME_SINGULAR      = 'singularName';
     const NAME_PLURAL        = 'name';
@@ -28,8 +31,6 @@ class ProjectLabelHelper implements ProjectLabelHelperInterface
     const MENU_NAME          = 'menuName';
 
     private $translationHelper;
-
-    private static $instance;
 
     /**
      * Set up all required components for this helper.
@@ -63,19 +64,6 @@ class ProjectLabelHelper implements ProjectLabelHelperInterface
         $labels->setMenuName($this->translationHelper->translate(self::MENU_NAME));
 
         return $labels;
-    }
-    
-    /**
-     * return an instance of this singleton.
-     * @return ProjectLabelHelper
-     */
-    public static function getInstance()
-    {
-        if (self::$instance === null)
-        {
-            self::$instance = new self();
-        }
-        return self::$instance;
     }
 
 }
