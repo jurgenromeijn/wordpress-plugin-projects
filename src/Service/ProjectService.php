@@ -39,6 +39,7 @@ class ProjectService implements ProjectServiceInterface
     public function createPostType()
     {
         $projectPostType = $this->postTypeHelper->createPostType();
+        var_dump($projectPostType->toArray());
         register_post_type(
             self::PROJECT_POST_TYPE_NAME,
             $this->convertModelToArray($projectPostType));
@@ -47,6 +48,7 @@ class ProjectService implements ProjectServiceInterface
     public function createTaxonomy()
     {
         $projectTaxonomy = $this->taxonomyHelper->createTaxonomy();
+        print_r($this->convertModelToArray($projectTaxonomy));
         register_taxonomy(
             self::PROJECT_TAXONOMY_NAME,
             self::PROJECT_POST_TYPE_NAME,

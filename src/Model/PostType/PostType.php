@@ -5,13 +5,17 @@
 
 namespace JurgenRomeijn\Projects\Model\PostType;
 use JurgenRomeijn\Projects\Model\Rewrite;
+use JurgenRomeijn\Projects\Model\WordpressModelInterface;
+use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
 
 /**
  * This class represents the post type in wordpress.
  * @package JurgenRomeijn\Projects\Model\PostType
  */
-class PostType
+class PostType implements WordpressModelInterface
 {
+
+    use WordpressModelToArrayTrait;
 
     private $labels;
     private $public;
@@ -120,5 +124,5 @@ class PostType
     {
         $this->supports = $supports;
     }
-
+    
 }
