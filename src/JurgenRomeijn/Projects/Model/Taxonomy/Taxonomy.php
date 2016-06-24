@@ -25,7 +25,11 @@ class Taxonomy
      * @param bool $public
      * @param Rewrite $rewrite
      */
-    public function __construct($hierarchical, $label, $public, Rewrite $rewrite)
+    public function __construct(
+        $hierarchical = true,
+        $label = "type",
+        $public = true,
+        Rewrite $rewrite = null)
     {
         $this->hierarchical = $hierarchical;
         $this->label = $label;

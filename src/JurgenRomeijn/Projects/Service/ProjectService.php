@@ -5,6 +5,7 @@
 
 namespace JurgenRomeijn\Projects\Service;
 use JurgenRomeijn\Projects\Service\Helper\ProjectPostTypeHelper;
+use JurgenRomeijn\Projects\Service\Helper\ProjectTaxonomyHelper;
 
 /**
  * This class contains the methods that create the post type and taxonomy.
@@ -16,13 +17,23 @@ class ProjectService implements ProjectServiceInterface
     const PROJECT_TAXONOMY_NAME = "projects";
 
     private $postTypeHelper;
+    private $taxonomyHelper;
+
+    private static $instance;
 
     /**
      * ProjectsService constructor.
      */
-    public function __construct()
+    private function __construct()
     {
         $this->postTypeHelper = ProjectPostTypeHelper::getInstance();
+        $this->taxonomyHelper = ProjectTaxonomyHelper::getInstance();
+    }
+
+    public function register()
+    {
+        add_action('init', array($this, 'createPostType'));
+        add_action('init', array($this, 'createTaxonomy'));
     }
 
     public function createPostType()
@@ -33,12 +44,22 @@ class ProjectService implements ProjectServiceInterface
 
     public function createTaxonomy()
     {
-        // TODO: Implement createTaxonomy() method.
+        $projectTaxonomy = $this->taxonomyHelper->createTaxonomy();
+        register_taxonomy(PROJECT_TAXONOMY_NAME, PROJECT_POST_TYPE_NAME, $this->convertModelToArray($projectTaxonomy));
     }
 
     private function convertModelToArray($model)
     {
         return json_encode($model);
+    }
+
+    public static function getInstance()
+    {
+        if (self::$instance === null)
+        {
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 
 }

@@ -4,8 +4,6 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
-
-
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
 use JurgenRomeijn\Projects\Model\Rewrite;
@@ -18,7 +16,8 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
     private $labelHelper;
     private static $instance;
 
-    private function __construct() {
+    private function __construct()
+    {
         $this->labelHelper = ProjectLabelHelper::getInstance();
     }
 

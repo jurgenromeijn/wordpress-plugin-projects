@@ -5,9 +5,9 @@
 
 namespace JurgenRomeijn\Projects\Service\Helper;
 
-interface ProjectPostTypeHelperInterface
+interface ProjectTaxonomyHelperInterface
 {
 
-    public function createPostType();
+    public function createTaxonomy();
 
 }
