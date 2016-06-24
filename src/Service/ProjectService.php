@@ -30,12 +30,18 @@ class ProjectService implements ProjectServiceInterface
         $this->taxonomyHelper = ProjectTaxonomyHelper::getInstance();
     }
 
+    /**
+     * Register to the required wordpress hooks.
+     */
     public function register()
     {
         add_action('init', array($this, 'createPostType'));
         add_action('init', array($this, 'createTaxonomy'));
     }
 
+    /**
+     * Create the project post type.
+     */
     public function createPostType()
     {
         $projectPostType = $this->postTypeHelper->createPostType();
@@ -44,6 +50,9 @@ class ProjectService implements ProjectServiceInterface
             $projectPostType->toArray());
     }
 
+    /**
+     * Create the project taxonomy.
+     */
     public function createTaxonomy()
     {
         $projectTaxonomy = $this->taxonomyHelper->createTaxonomy();
@@ -53,6 +62,10 @@ class ProjectService implements ProjectServiceInterface
             $projectTaxonomy->toArray());
     }
 
+    /**
+     * return an instance of this singleton.
+     * @return ProjectService
+     */
     public static function getInstance()
     {
         if (self::$instance === null)
