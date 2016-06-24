@@ -5,7 +5,6 @@
 
 namespace JurgenRomeijn\Projects\Service\Helper;
 
-
 interface ProjectPostTypeHelperInterface
 {
 

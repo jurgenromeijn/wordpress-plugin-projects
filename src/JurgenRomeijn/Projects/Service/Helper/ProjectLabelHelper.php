@@ -4,8 +4,6 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
-
-
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
 class ProjectLabelHelper implements ProjectLabelHelperInterface

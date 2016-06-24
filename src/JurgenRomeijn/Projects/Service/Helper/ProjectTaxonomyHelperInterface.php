@@ -5,8 +5,9 @@
 
 namespace JurgenRomeijn\Projects\Service\Helper;
 
-
 interface ProjectTaxonomyHelperInterface
 {
+
+    public function createTaxonomy();
 
 }
