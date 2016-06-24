@@ -19,7 +19,7 @@ class Rewrite
      * @param string $slug
      * @param bool $hierarchical
      */
-    public function __construct($slug, $hierarchical)
+    public function __construct($slug, $hierarchical = null)
     {
         $this->slug = $slug;
         $this->hierarchical = $hierarchical;
