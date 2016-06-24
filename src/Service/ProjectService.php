@@ -14,6 +14,7 @@ use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
  */
 class ProjectService implements ProjectServiceInterface
 {
+    
     const PROJECT_POST_TYPE_NAME = 'project';
     const PROJECT_TAXONOMY_NAME = 'projects';
 
