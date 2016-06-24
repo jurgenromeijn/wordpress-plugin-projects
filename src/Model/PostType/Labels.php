@@ -4,13 +4,17 @@
  */
 
 namespace JurgenRomeijn\Projects\Model\PostType;
+use JurgenRomeijn\Projects\Model\WordpressModelInterface;
+use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
 
 /**
  * This class contains all labels displayed by wordpress for a post type
  * @package JurgenRomeijn\Projects\Model\PostType
  */
-class Labels
+class Labels implements WordpressModelInterface
 {
+
+    use WordpressModelToArrayTrait;
 
     private $name;
     private $singularName;

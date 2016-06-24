@@ -13,8 +13,8 @@ use JurgenRomeijn\Projects\Service\Helper\ProjectTaxonomyHelper;
  */
 class ProjectService implements ProjectServiceInterface
 {
-    const PROJECT_POST_TYPE_NAME = "project";
-    const PROJECT_TAXONOMY_NAME = "projects";
+    const PROJECT_POST_TYPE_NAME = 'project';
+    const PROJECT_TAXONOMY_NAME = 'projects';
 
     private $postTypeHelper;
     private $taxonomyHelper;
@@ -41,7 +41,7 @@ class ProjectService implements ProjectServiceInterface
         $projectPostType = $this->postTypeHelper->createPostType();
         register_post_type(
             self::PROJECT_POST_TYPE_NAME,
-            $this->convertModelToArray($projectPostType));
+            $projectPostType->toArray());
     }
 
     public function createTaxonomy()
@@ -50,12 +50,7 @@ class ProjectService implements ProjectServiceInterface
         register_taxonomy(
             self::PROJECT_TAXONOMY_NAME,
             self::PROJECT_POST_TYPE_NAME,
-            $this->convertModelToArray($projectTaxonomy));
-    }
-
-    private function convertModelToArray($model)
-    {
-        return json_encode($model);
+            $projectTaxonomy->toArray());
     }
 
     public static function getInstance()

@@ -10,8 +10,8 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 {
 
-    const SLUG = "projects";
-    const LABEL = "Type";
+    const SLUG = 'projects';
+    const LABEL = 'Project Types';
 
     private static $instance;
 
