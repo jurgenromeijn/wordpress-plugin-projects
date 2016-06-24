@@ -24,7 +24,7 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
         $taxonomy->setHierarchical(true);
         $taxonomy->setPublic(true);
         $taxonomy->setLabel(self::LABEL);
-        $taxonomy->setRewrite(new Rewrite(SLUG, true));
+        $taxonomy->setRewrite(new Rewrite(self::SLUG, true));
 
         return $taxonomy;
     }
