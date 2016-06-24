@@ -8,24 +8,34 @@ namespace JurgenRomeijn\Projects\Model;
 
 trait WordpressModelToArrayTrait
 {
-    
+
     /**
      * @return array
      */
     public function toArray()
     {
-        $array = get_object_vars($this);
-        $tmpArray = $array;
+        $objectVars = get_object_vars($this);
+        $returnArray = array();
 
-        foreach ($tmpArray as $key => $value)
+        foreach ($objectVars as $key => $value)
         {
+            $snakeCaseKey = $this->convertKeyToSnakeCase($key);
             if(is_object($value))
             {
-                $array[$key] = $value->toArray();
+                $returnArray[$snakeCaseKey] = $value->toArray();
+            }
+            elseif($value != null)
+            {
+                $returnArray[$snakeCaseKey] = $value;
             }
         }
 
-        return $array;
+        return $returnArray;
+    }
+
+    private function convertKeyToSnakeCase($key)
+    {
+        return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $key));
     }
 
 }
