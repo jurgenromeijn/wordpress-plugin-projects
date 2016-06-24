@@ -25,7 +25,7 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
     {
         $projectPostType = new PostType();
 
-        $projectPostType->setLabels($this->labelHelper->createLabel());
+        $projectPostType->setLabels($this->labelHelper->createLabels());
         $projectPostType->setPublic(true);
         $projectPostType->setHasArchive(true);
         $projectPostType->setRewrite(new Rewrite(self::SLUG));
