@@ -25,7 +25,7 @@ class Labels
     private $notFoundInTrash;
     private $parentItemColon;
     private $menuName;
-
+    
     /**
      * Labels constructor.
      * @param string $name
