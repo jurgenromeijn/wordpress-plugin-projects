@@ -25,7 +25,7 @@ class Labels
     private $notFoundInTrash;
     private $parentItemColon;
     private $menuName;
-
+    
     /**
      * Labels constructor.
      * @param string $name
@@ -42,7 +42,20 @@ class Labels
      * @param string $parentItemColon
      * @param string $menuName
      */
-    public function __construct($name, $singularName, $addNew, $addNewItem, $editItem, $newItem, $allItems, $viewItem, $searchItems, $notFound, $notFoundInTrash, $parentItemColon, $menuName)
+    public function __construct(
+        $name = null,
+        $singularName = null,
+        $addNew = null,
+        $addNewItem = null,
+        $editItem = null,
+        $newItem = null,
+        $allItems = null,
+        $viewItem = null,
+        $searchItems = null,
+        $notFound = null,
+        $notFoundInTrash = null,
+        $parentItemColon = null,
+        $menuName = null)
     {
         $this->name = $name;
         $this->singularName = $singularName;

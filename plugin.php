@@ -11,5 +11,5 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-add_action('init', array('\JurgenRomeijn\Projects\Service\ProjectsService', 'createPostType'));
-add_action('init', array('\JurgenRomeijn\Projects\Service\ProjectsService', 'createTaxonomy'));
+add_action('init', array('\JurgenRomeijn\Projects\Service\ProjectService', 'createPostType'));
+add_action('init', array('\JurgenRomeijn\Projects\Service\ProjectService', 'createTaxonomy'));

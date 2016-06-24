@@ -17,7 +17,7 @@ class PostType
     private $public;
     private $hasArchive;
     private $rewrite;
-    private $supports = array();
+    private $supports;
 
     /**
      * PostType constructor.
@@ -27,7 +27,12 @@ class PostType
      * @param Rewrite $rewrite
      * @param array $supports
      */
-    public function __construct(Labels $labels, $public, $hasArchive, Rewrite $rewrite, array $supports)
+    public function __construct(
+        Labels $labels = null,
+        $public = true,
+        $hasArchive = true,
+        Rewrite $rewrite = null,
+        array $supports = array())
     {
         $this->labels = $labels;
         $this->public = $public;
