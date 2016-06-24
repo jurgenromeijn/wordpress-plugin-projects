@@ -8,7 +8,7 @@ namespace JurgenRomeijn\Projects\Service\Helper;
 
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
-class ProjectsLabelHelper implements ProjectLabelHelperInterface
+class ProjectLabelHelper implements ProjectLabelHelperInterface
 {
 
     const NAME_SINGULAR      = "Project";
