@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+use JurgenRomeijn\Projects\Common\SingletonTrait;
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
@@ -14,12 +15,12 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 {
 
+    use SingletonTrait;
+
     const SLUG = 'projectTaxonomySlug';
     const LABEL = 'projectTaxonomyType';
 
     private $translationHelper;
-
-    private static $instance;
 
     /**
      * Set up all required components for this helper.
@@ -44,19 +45,6 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
         $taxonomy->setRewrite(new Rewrite($this->translationHelper->translate(self::SLUG), true));
 
         return $taxonomy;
-    }
-
-    /**
-     * return an instance of this singleton.
-     * @return ProjectTaxonomyHelper
-     */
-    public static function getInstance()
-    {
-        if (self::$instance === null)
-        {
-            self::$instance = new self();
-        }
-        return self::$instance;
     }
 
 }
