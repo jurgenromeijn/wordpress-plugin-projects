@@ -13,5 +13,8 @@
 
 require 'autoload.php';
 
+/**
+ * Set up the plugin.
+ */
 $projectService = \JurgenRomeijn\Projects\Service\ProjectService::getInstance();
 $projectService->register();
