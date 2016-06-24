@@ -15,9 +15,11 @@ use JurgenRomeijn\Projects\Model\Rewrite;
 class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 {
 
-    const SLUG = 'projects';
+    const SLUG = 'projectPostTypeSlug';
 
+    private $translationHelper;
     private $labelHelper;
+
     private static $instance;
 
     /**
@@ -26,6 +28,7 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
      */
     private function __construct()
     {
+        $this->translationHelper = TranslationHelper::getInstance();
         $this->labelHelper = ProjectLabelHelper::getInstance();
     }
 
@@ -40,7 +43,7 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
         $projectPostType->setLabels($this->labelHelper->createLabels());
         $projectPostType->setPublic(true);
         $projectPostType->setHasArchive(true);
-        $projectPostType->setRewrite(new Rewrite(self::SLUG));
+        $projectPostType->setRewrite(new Rewrite($this->translationHelper->translate(self::SLUG)));
         $projectPostType->setSupports(array(
             SupportOptions::TITLE,
             SupportOptions::EDITOR,

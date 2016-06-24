@@ -14,16 +14,21 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 {
 
-    const SLUG = 'projects';
-    const LABEL = 'Project Types';
+    const SLUG = 'projectTaxonomySlug';
+    const LABEL = 'projectTaxonomyType';
+
+    private $translationHelper;
 
     private static $instance;
 
     /**
-     * Empty private constructor as this is a application wide component.
+     * Set up all required components for this helper.
      * ProjectTaxonomyHelper constructor.
      */
-    private function __construct() {}
+    private function __construct()
+    {
+        $this->translationHelper = TranslationHelper::getInstance();
+    }
 
     /**
      * Create the project post type.
@@ -35,8 +40,8 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 
         $taxonomy->setHierarchical(true);
         $taxonomy->setPublic(true);
-        $taxonomy->setLabel(self::LABEL);
-        $taxonomy->setRewrite(new Rewrite(self::SLUG, true));
+        $taxonomy->setLabel($this->translationHelper->translate(self::LABEL));
+        $taxonomy->setRewrite(new Rewrite($this->translationHelper->translate(self::SLUG), true));
 
         return $taxonomy;
     }
@@ -53,4 +58,5 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
         }
         return self::$instance;
     }
+
 }
