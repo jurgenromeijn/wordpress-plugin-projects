@@ -12,6 +12,7 @@ namespace JurgenRomeijn\Projects\Service;
 interface ProjectServiceInterface
 {
 
+    public function register();
     public function createPostType();
     public function createTaxonomy();
 

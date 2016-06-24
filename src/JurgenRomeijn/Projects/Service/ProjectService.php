@@ -19,13 +19,21 @@ class ProjectService implements ProjectServiceInterface
     private $postTypeHelper;
     private $taxonomyHelper;
 
+    private static $instance;
+
     /**
      * ProjectsService constructor.
      */
-    public function __construct()
+    private function __construct()
     {
         $this->postTypeHelper = ProjectPostTypeHelper::getInstance();
         $this->taxonomyHelper = ProjectTaxonomyHelper::getInstance();
+    }
+
+    public function register()
+    {
+        add_action('init', array($this, 'createPostType'));
+        add_action('init', array($this, 'createTaxonomy'));
     }
 
     public function createPostType()
@@ -43,6 +51,15 @@ class ProjectService implements ProjectServiceInterface
     private function convertModelToArray($model)
     {
         return json_encode($model);
+    }
+
+    public static function getInstance()
+    {
+        if (self::$instance === null)
+        {
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 
 }
