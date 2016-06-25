@@ -68,7 +68,7 @@ class PostType implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getPublic()
+    public function isPublic()
     {
         return $this->public;
     }
@@ -84,7 +84,7 @@ class PostType implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getHasArchive()
+    public function hasArchive()
     {
         return $this->hasArchive;
     }

@@ -48,7 +48,7 @@ class Taxonomy implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getHierarchical()
+    public function isHierarchical()
     {
         return $this->hierarchical;
     }
@@ -80,7 +80,7 @@ class Taxonomy implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getPublic()
+    public function isPublic()
     {
         return $this->public;
     }
