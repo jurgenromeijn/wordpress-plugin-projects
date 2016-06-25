@@ -20,6 +20,7 @@ class PostType implements WordpressModelInterface
     private $labels;
     private $public;
     private $hasArchive;
+    private $showInRest;
     private $rewrite;
     private $supports;
 
@@ -28,6 +29,7 @@ class PostType implements WordpressModelInterface
      * @param Labels $labels
      * @param bool $public
      * @param bool $hasArchive
+     * @param bool $showInRest
      * @param Rewrite $rewrite
      * @param array $supports
      */
@@ -35,12 +37,14 @@ class PostType implements WordpressModelInterface
         Labels $labels = null,
         $public = true,
         $hasArchive = true,
+        $showInRest = true,
         Rewrite $rewrite = null,
         array $supports = array())
     {
         $this->labels = $labels;
         $this->public = $public;
         $this->hasArchive = $hasArchive;
+        $this->showInRest = true;
         $this->rewrite = $rewrite;
         $this->supports = $supports;
     }
@@ -64,7 +68,7 @@ class PostType implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getPublic()
+    public function isPublic()
     {
         return $this->public;
     }
@@ -80,7 +84,7 @@ class PostType implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getHasArchive()
+    public function hasArchive()
     {
         return $this->hasArchive;
     }
@@ -91,6 +95,22 @@ class PostType implements WordpressModelInterface
     public function setHasArchive($hasArchive)
     {
         $this->hasArchive = $hasArchive;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isShowInRest()
+    {
+        return $this->showInRest;
+    }
+
+    /**
+     * @param boolean $showInRest
+     */
+    public function setShowInRest($showInRest)
+    {
+        $this->showInRest = $showInRest;
     }
 
     /**

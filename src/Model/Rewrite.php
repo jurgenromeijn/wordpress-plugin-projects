@@ -47,7 +47,7 @@ class Rewrite implements WordpressModelInterface
     /**
      * @return bool
      */
-    public function getHierarchical()
+    public function isHierarchical()
     {
         return $this->hierarchical;
     }
