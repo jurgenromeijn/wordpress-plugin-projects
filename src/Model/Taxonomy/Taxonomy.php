@@ -20,6 +20,7 @@ class Taxonomy implements WordpressModelInterface
     private $hierarchical;
     private $label;
     private $public;
+    private $showInRest;
     private $rewrite;
 
     /**
@@ -27,17 +28,20 @@ class Taxonomy implements WordpressModelInterface
      * @param bool $hierarchical
      * @param string $label
      * @param bool $public
+     * @param bool $showInRest
      * @param Rewrite $rewrite
      */
     public function __construct(
         $hierarchical = true,
         $label = 'type',
         $public = true,
+        $showInRest = true,
         Rewrite $rewrite = null)
     {
         $this->hierarchical = $hierarchical;
         $this->label = $label;
         $this->public = $public;
+        $this->showInRest = $showInRest;
         $this->rewrite = $rewrite;
     }
 
@@ -87,6 +91,22 @@ class Taxonomy implements WordpressModelInterface
     public function setPublic($public)
     {
         $this->public = $public;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isShowInRest()
+    {
+        return $this->showInRest;
+    }
+
+    /**
+     * @param boolean $showInRest
+     */
+    public function setShowInRest($showInRest)
+    {
+        $this->showInRest = $showInRest;
     }
 
     /**

@@ -41,6 +41,7 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 
         $taxonomy->setHierarchical(true);
         $taxonomy->setPublic(true);
+        $taxonomy->setShowInRest(true);
         $taxonomy->setLabel($this->translationHelper->translate(self::LABEL));
         $taxonomy->setRewrite(new Rewrite($this->translationHelper->translate(self::SLUG), true));
 
