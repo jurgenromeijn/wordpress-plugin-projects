@@ -4,7 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
-use JurgenRomeijn\Projects\Common\SingletonTrait;
+use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
 use JurgenRomeijn\Projects\Model\Rewrite;

@@ -3,7 +3,7 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Common;
+namespace JurgenRomeijn\Projects\Util;
 
 /**
  * This trait contains all singleton functionality used by business components.
