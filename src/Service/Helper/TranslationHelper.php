@@ -4,7 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
-use JurgenRomeijn\Projects\Common\SingletonTrait;
+use JurgenRomeijn\Projects\Util\SingletonTrait;
 
 /**
  * This helper contains all functionality for localization of this plugin.

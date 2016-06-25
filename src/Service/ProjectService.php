@@ -4,7 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service;
-use JurgenRomeijn\Projects\Common\SingletonTrait;
+use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Service\Helper\ProjectPostTypeHelper;
 use JurgenRomeijn\Projects\Service\Helper\ProjectTaxonomyHelper;
 use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
