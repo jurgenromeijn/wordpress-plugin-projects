@@ -19,7 +19,7 @@ class ProjectService implements ProjectServiceInterface
     use SingletonTrait;
 
     const PROJECT_POST_TYPE_NAME = 'project';
-    const PROJECT_TAXONOMY_NAME = 'projects';
+    const PROJECT_TAXONOMY_NAME = 'project_types';
 
     private $postTypeHelper;
     private $taxonomyHelper;
