@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 
 /**
@@ -12,11 +13,9 @@ use JurgenRomeijn\Projects\Model\PostType\PostType;
  */
 interface ProjectPostTypeHelperInterface
 {
-
     /**
      * Create the project post type.
      * @return PostType
      */
     public function createPostType();
-
 }

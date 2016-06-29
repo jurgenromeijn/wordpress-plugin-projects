@@ -11,7 +11,6 @@ namespace JurgenRomeijn\Projects\Service;
  */
 interface ProjectServiceInterface
 {
-    
     /**
      * Create the project post type.
      */
@@ -21,5 +20,4 @@ interface ProjectServiceInterface
      * Create the project taxonomy.
      */
     public function createTaxonomy();
-
 }

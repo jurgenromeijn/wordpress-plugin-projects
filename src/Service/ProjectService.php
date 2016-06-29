@@ -4,10 +4,10 @@
  */
 
 namespace JurgenRomeijn\Projects\Service;
+
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Service\Helper\ProjectPostTypeHelper;
 use JurgenRomeijn\Projects\Service\Helper\ProjectTaxonomyHelper;
-use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
 
 /**
  * This class contains the methods that create the post type and taxonomy.
@@ -15,7 +15,6 @@ use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
  */
 class ProjectService implements ProjectServiceInterface
 {
-
     use SingletonTrait;
 
     const PROJECT_POST_TYPE_NAME = 'project';
@@ -41,7 +40,8 @@ class ProjectService implements ProjectServiceInterface
         $projectPostType = $this->postTypeHelper->createPostType();
         register_post_type(
             self::PROJECT_POST_TYPE_NAME,
-            $projectPostType->toArray());
+            $projectPostType->toArray()
+        );
     }
 
     /**
@@ -53,7 +53,7 @@ class ProjectService implements ProjectServiceInterface
         register_taxonomy(
             self::PROJECT_TAXONOMY_NAME,
             self::PROJECT_POST_TYPE_NAME,
-            $projectTaxonomy->toArray());
+            $projectTaxonomy->toArray()
+        );
     }
-
 }

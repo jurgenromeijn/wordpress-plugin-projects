@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 
 /**
@@ -12,7 +13,6 @@ use JurgenRomeijn\Projects\Util\SingletonTrait;
  */
 class TranslationHelper implements TranslationHelperInterface
 {
-
     use SingletonTrait;
 
     const DOMAIN = "wordpress-plugin-projects";
@@ -22,7 +22,10 @@ class TranslationHelper implements TranslationHelperInterface
      * Empty private constructor as this is a application wide component.
      * TranslationHelper constructor.
      */
-    private function __construct() {}
+    private function __construct()
+    {
+        // Do nothing
+    }
 
     /**
      * Load the Wordpress plugin text domain.
@@ -31,7 +34,9 @@ class TranslationHelper implements TranslationHelperInterface
     {
         load_plugin_textdomain(
             self::DOMAIN,
-            false, dirname(plugin_basename( __FILE__ )) . self::PATH_LANGUAGES);
+            false,
+            dirname(plugin_basename(__FILE__)) . self::PATH_LANGUAGES
+        );
     }
 
     /**
@@ -43,5 +48,4 @@ class TranslationHelper implements TranslationHelperInterface
     {
         return __($string, self::DOMAIN);
     }
-
 }

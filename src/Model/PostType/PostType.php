@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Model\PostType;
+
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\WordpressModelInterface;
 use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
@@ -14,7 +15,6 @@ use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
  */
 class PostType implements WordpressModelInterface
 {
-
     use WordpressModelToArrayTrait;
 
     private $labels;
@@ -39,8 +39,8 @@ class PostType implements WordpressModelInterface
         $hasArchive = true,
         $showInRest = true,
         Rewrite $rewrite = null,
-        array $supports = array())
-    {
+        array $supports = array()
+    ) {
         $this->labels = $labels;
         $this->public = $public;
         $this->hasArchive = $hasArchive;
@@ -144,5 +144,4 @@ class PostType implements WordpressModelInterface
     {
         $this->supports = $supports;
     }
-    
 }

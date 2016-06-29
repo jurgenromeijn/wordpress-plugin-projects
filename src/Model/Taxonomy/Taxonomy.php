@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Model\Taxonomy;
+
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\WordpressModelInterface;
 use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
@@ -14,7 +15,6 @@ use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
  */
 class Taxonomy implements WordpressModelInterface
 {
-
     use WordpressModelToArrayTrait;
 
     private $hierarchical;
@@ -36,8 +36,8 @@ class Taxonomy implements WordpressModelInterface
         $label = 'type',
         $public = true,
         $showInRest = true,
-        Rewrite $rewrite = null)
-    {
+        Rewrite $rewrite = null
+    ) {
         $this->hierarchical = $hierarchical;
         $this->label = $label;
         $this->public = $public;
@@ -124,5 +124,4 @@ class Taxonomy implements WordpressModelInterface
     {
         $this->rewrite = $rewrite;
     }
-
 }

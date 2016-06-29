@@ -11,7 +11,6 @@ namespace JurgenRomeijn\Projects\Service\Helper;
  */
 interface TranslationHelperInterface
 {
-
     /**
      * Load the Wordpress plugin text domain.
      */
@@ -23,5 +22,4 @@ interface TranslationHelperInterface
      * @return string
      */
     public function translate($string);
-
 }

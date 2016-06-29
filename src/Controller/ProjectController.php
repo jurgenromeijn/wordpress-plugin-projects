@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Controller;
+
 use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
 use JurgenRomeijn\Projects\Service\ProjectService;
 use JurgenRomeijn\Projects\Util\SingletonTrait;
@@ -14,7 +15,6 @@ use JurgenRomeijn\Projects\Util\SingletonTrait;
  */
 class ProjectController
 {
-
     use SingletonTrait;
 
     private $projectService;
@@ -54,5 +54,4 @@ class ProjectController
     {
         $this->projectService->createTaxonomy();
     }
-
 }
