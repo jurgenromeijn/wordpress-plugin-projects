@@ -4,7 +4,7 @@
  * Description: A Wordpress plugin that creates the portfolio/project post types and taxonomies and adds it to the menu.
  * Author: Jurgen Romeijn <jurgen.romeijn@gmail.com>
  * Author URI: http://www.jurgenromeijn.com
- * Version: 1.4
+ * Version: 1.4.1
  * Plugin URI: https://github.com/jurgenromeijn/wordpress-plugin-projects
  * License: GPL3
  *
@@ -14,7 +14,7 @@
 /**
  * Autoload all classes by using the composer auto loader.
  */
-require __DIR__ . '/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
 /**
  * Set up the plugin.
