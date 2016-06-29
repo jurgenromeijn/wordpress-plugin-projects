@@ -11,7 +11,6 @@ namespace JurgenRomeijn\Projects\Model;
  */
 trait WordpressModelToArrayTrait
 {
-
     /**
      * return an array representation of the internal model.
      * @return array
@@ -21,15 +20,11 @@ trait WordpressModelToArrayTrait
         $objectVars = get_object_vars($this);
         $returnArray = array();
 
-        foreach ($objectVars as $key => $value)
-        {
+        foreach ($objectVars as $key => $value) {
             $snakeCaseKey = $this->convertKeyToSnakeCase($key);
-            if(is_object($value))
-            {
+            if (is_object($value) && has_tr) {
                 $returnArray[$snakeCaseKey] = $value->toArray();
-            }
-            elseif($value != null)
-            {
+            } elseif ($value != null) {
                 $returnArray[$snakeCaseKey] = $value;
             }
         }
@@ -46,5 +41,4 @@ trait WordpressModelToArrayTrait
     {
         return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $key));
     }
-
 }
