@@ -11,8 +11,8 @@ use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
 /**
- * This helper contains all functionality to create the taxonomy for a project.
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This factory contains all functionality to create the taxonomy for a project.
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
 class ProjectTaxonomyFactory implements ProjectTaxonomyFactoryInterface
 {
@@ -24,7 +24,7 @@ class ProjectTaxonomyFactory implements ProjectTaxonomyFactoryInterface
     private $translationHelper;
 
     /**
-     * Set up all required components for this helper.
+     * Set up all required components for this factory.
      * ProjectTaxonomyHelper constructor.
      */
     private function __construct()

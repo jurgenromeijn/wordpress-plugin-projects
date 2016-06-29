@@ -12,8 +12,8 @@ use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
 use JurgenRomeijn\Projects\Model\Rewrite;
 
 /**
- * This helper contains all functionality to create the post type for a project.
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This factory contains all functionality to create the post type for a project.
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
 class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
 {
@@ -25,7 +25,7 @@ class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
     private $labelHelper;
 
     /**
-     * Set up all required components for this helper.
+     * Set up all required components for this factory.
      * ProjectPostTypeHelper constructor.
      */
     private function __construct()

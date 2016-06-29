@@ -10,8 +10,8 @@ use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
 /**
- * This helper contains all functionality to create labels for a project.
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This factory contains all functionality to create labels for a project.
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
 class ProjectLabelFactory implements ProjectLabelFactoryInterface
 {
@@ -34,7 +34,7 @@ class ProjectLabelFactory implements ProjectLabelFactoryInterface
     private $translationHelper;
 
     /**
-     * Set up all required components for this helper.
+     * Set up all required components for this factory.
      * ProjectLabelHelper constructor.
      */
     private function __construct()

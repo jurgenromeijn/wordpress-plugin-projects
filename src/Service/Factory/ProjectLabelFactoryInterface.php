@@ -8,8 +8,8 @@ namespace JurgenRomeijn\Projects\Service\Factory;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
 /**
- * This interface describes which features a ProjectLabelHelper should have.
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This interface describes which features a ProjectLabelFactory should have.
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
 interface ProjectLabelFactoryInterface
 {

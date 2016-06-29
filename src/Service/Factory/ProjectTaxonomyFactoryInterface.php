@@ -9,7 +9,7 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
 /**
  * This interface describes which features a ProjectPostProjectTaxonomyHelper should have
- * @package JurgenRomeijn\Projects\Service\Helper
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
 interface ProjectTaxonomyFactoryInterface
 {
