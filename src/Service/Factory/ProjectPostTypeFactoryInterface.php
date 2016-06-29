@@ -3,15 +3,15 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Service\Helper;
+namespace JurgenRomeijn\Projects\Service\Factory;
 
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 
 /**
- * This interface describes which features a ProjectPostTypeHelper should have
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This interface describes which features a ProjectPostTypeFactory should have
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
-interface ProjectPostTypeHelperInterface
+interface ProjectPostTypeFactoryInterface
 {
     /**
      * Create the project post type.

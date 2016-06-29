@@ -3,16 +3,17 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Service\Helper;
+namespace JurgenRomeijn\Projects\Service\Factory;
 
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
 /**
- * This helper contains all functionality to create labels for a project.
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This factory contains all functionality to create labels for a project.
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
-class ProjectLabelHelper implements ProjectLabelHelperInterface
+class ProjectLabelFactory implements ProjectLabelFactoryInterface
 {
     use SingletonTrait;
 
@@ -33,7 +34,7 @@ class ProjectLabelHelper implements ProjectLabelHelperInterface
     private $translationHelper;
 
     /**
-     * Set up all required components for this helper.
+     * Set up all required components for this factory.
      * ProjectLabelHelper constructor.
      */
     private function __construct()

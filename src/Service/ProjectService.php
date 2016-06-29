@@ -6,8 +6,8 @@
 namespace JurgenRomeijn\Projects\Service;
 
 use JurgenRomeijn\Projects\Util\SingletonTrait;
-use JurgenRomeijn\Projects\Service\Helper\ProjectPostTypeHelper;
-use JurgenRomeijn\Projects\Service\Helper\ProjectTaxonomyHelper;
+use JurgenRomeijn\Projects\Service\Factory\ProjectPostTypeFactory;
+use JurgenRomeijn\Projects\Service\Factory\ProjectTaxonomyFactory;
 
 /**
  * This class contains the methods that create the post type and taxonomy.
@@ -28,8 +28,8 @@ class ProjectService implements ProjectServiceInterface
      */
     private function __construct()
     {
-        $this->postTypeHelper = ProjectPostTypeHelper::getInstance();
-        $this->taxonomyHelper = ProjectTaxonomyHelper::getInstance();
+        $this->postTypeHelper = ProjectPostTypeFactory::getInstance();
+        $this->taxonomyHelper = ProjectTaxonomyFactory::getInstance();
     }
 
     /**
