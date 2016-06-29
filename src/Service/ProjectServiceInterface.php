@@ -11,12 +11,6 @@ namespace JurgenRomeijn\Projects\Service;
  */
 interface ProjectServiceInterface
 {
-
-    /**
-     * Register to the required wordpress hooks.
-     */
-    public function register();
-
     /**
      * Create the project post type.
      */
@@ -26,5 +20,4 @@ interface ProjectServiceInterface
      * Create the project taxonomy.
      */
     public function createTaxonomy();
-
 }

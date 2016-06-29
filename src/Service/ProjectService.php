@@ -4,10 +4,10 @@
  */
 
 namespace JurgenRomeijn\Projects\Service;
+
 use JurgenRomeijn\Projects\Util\SingletonTrait;
-use JurgenRomeijn\Projects\Service\Helper\ProjectPostTypeHelper;
-use JurgenRomeijn\Projects\Service\Helper\ProjectTaxonomyHelper;
-use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
+use JurgenRomeijn\Projects\Service\Factory\ProjectPostTypeFactory;
+use JurgenRomeijn\Projects\Service\Factory\ProjectTaxonomyFactory;
 
 /**
  * This class contains the methods that create the post type and taxonomy.
@@ -15,13 +15,11 @@ use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
  */
 class ProjectService implements ProjectServiceInterface
 {
-
     use SingletonTrait;
 
     const PROJECT_POST_TYPE_NAME = 'project';
-    const PROJECT_TAXONOMY_NAME = 'projects';
+    const PROJECT_TAXONOMY_NAME = 'project_types';
 
-    private $translationHelper;
     private $postTypeHelper;
     private $taxonomyHelper;
 
@@ -30,19 +28,8 @@ class ProjectService implements ProjectServiceInterface
      */
     private function __construct()
     {
-        $this->translationHelper = TranslationHelper::getInstance();
-        $this->postTypeHelper = ProjectPostTypeHelper::getInstance();
-        $this->taxonomyHelper = ProjectTaxonomyHelper::getInstance();
-    }
-
-    /**
-     * Register to the required wordpress hooks.
-     */
-    public function register()
-    {
-        $this->translationHelper->loadTextDomain();
-        add_action('init', array($this, 'createPostType'));
-        add_action('init', array($this, 'createTaxonomy'));
+        $this->postTypeHelper = ProjectPostTypeFactory::getInstance();
+        $this->taxonomyHelper = ProjectTaxonomyFactory::getInstance();
     }
 
     /**
@@ -53,7 +40,8 @@ class ProjectService implements ProjectServiceInterface
         $projectPostType = $this->postTypeHelper->createPostType();
         register_post_type(
             self::PROJECT_POST_TYPE_NAME,
-            $projectPostType->toArray());
+            $projectPostType->toArray()
+        );
     }
 
     /**
@@ -65,7 +53,7 @@ class ProjectService implements ProjectServiceInterface
         register_taxonomy(
             self::PROJECT_TAXONOMY_NAME,
             self::PROJECT_POST_TYPE_NAME,
-            $projectTaxonomy->toArray());
+            $projectTaxonomy->toArray()
+        );
     }
-
 }

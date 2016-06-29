@@ -3,18 +3,19 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Service\Helper;
+namespace JurgenRomeijn\Projects\Service\Factory;
+
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
 /**
- * This helper contains all functionality to create the taxonomy for a project.
- * @package JurgenRomeijn\Projects\Service\Helper
+ * This factory contains all functionality to create the taxonomy for a project.
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
-class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
+class ProjectTaxonomyFactory implements ProjectTaxonomyFactoryInterface
 {
-
     use SingletonTrait;
 
     const SLUG = 'projectTaxonomySlug';
@@ -23,7 +24,7 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
     private $translationHelper;
 
     /**
-     * Set up all required components for this helper.
+     * Set up all required components for this factory.
      * ProjectTaxonomyHelper constructor.
      */
     private function __construct()
@@ -47,5 +48,4 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 
         return $taxonomy;
     }
-
 }

@@ -11,7 +11,6 @@ namespace JurgenRomeijn\Projects\Model;
  */
 class Rewrite implements WordpressModelInterface
 {
-
     use WordpressModelToArrayTrait;
 
     private $slug;
@@ -59,5 +58,4 @@ class Rewrite implements WordpressModelInterface
     {
         $this->hierarchical = $hierarchical;
     }
-
 }

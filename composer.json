@@ -1,7 +1,23 @@
 {
   "name": "jurgenromeijn/wordpress-plugin-projects",
+  "homepage": "https://github.com/jurgenromeijn/wordpress-plugin-projects",
+  "description": "A Wordpress plugin that creates the portfolio/project post types and taxonomies and adds it to the menu.",
+  "license": "GPL-3.0",
   "type": "wordpress-plugin",
+  "keywords": [
+    "WordPress", "plugins", "themes", "php", "projects"
+  ],
+  "authors": [
+    {
+      "name": "Jurgen Romeijn",
+      "email": "jurgen.romeijn@gmail.com"
+    }
+  ],
   "require": {
+    "php": ">=5.4",
     "composer/installers": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {"JurgenRomeijn\\Projects\\": "src/"}
   }
 }

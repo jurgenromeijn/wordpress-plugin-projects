@@ -3,20 +3,19 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Service\Helper;
+namespace JurgenRomeijn\Projects\Service\Factory;
+
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
 /**
  * This interface describes which features a ProjectPostProjectTaxonomyHelper should have
- * @package JurgenRomeijn\Projects\Service\Helper
+ * @package JurgenRomeijn\Projects\Service\Factory
  */
-interface ProjectTaxonomyHelperInterface
+interface ProjectTaxonomyFactoryInterface
 {
-
     /**
      * Create the project taxonomy.
      * @return Taxonomy
      */
     public function createTaxonomy();
-
 }

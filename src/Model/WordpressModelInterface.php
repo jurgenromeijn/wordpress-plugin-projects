@@ -11,11 +11,9 @@ namespace JurgenRomeijn\Projects\Model;
  */
 interface WordpressModelInterface
 {
-
     /**
      * Get a represnetation of the model in array format.
      * @return array
      */
     public function toArray();
-
 }

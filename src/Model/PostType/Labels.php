@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Model\PostType;
+
 use JurgenRomeijn\Projects\Model\WordpressModelInterface;
 use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
 
@@ -13,7 +14,6 @@ use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
  */
 class Labels implements WordpressModelInterface
 {
-
     use WordpressModelToArrayTrait;
 
     private $name;
@@ -59,8 +59,8 @@ class Labels implements WordpressModelInterface
         $notFound = null,
         $notFoundInTrash = null,
         $parentItemColon = null,
-        $menuName = null)
-    {
+        $menuName = null
+    ) {
         $this->name = $name;
         $this->singularName = $singularName;
         $this->addNew = $addNew;
@@ -283,5 +283,4 @@ class Labels implements WordpressModelInterface
     {
         $this->menuName = $menuName;
     }
-
 }
