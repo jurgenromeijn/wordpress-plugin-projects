@@ -21,7 +21,6 @@ class ProjectService implements ProjectServiceInterface
     const PROJECT_POST_TYPE_NAME = 'project';
     const PROJECT_TAXONOMY_NAME = 'projects';
 
-    private $translationHelper;
     private $postTypeHelper;
     private $taxonomyHelper;
 
@@ -30,19 +29,8 @@ class ProjectService implements ProjectServiceInterface
      */
     private function __construct()
     {
-        $this->translationHelper = TranslationHelper::getInstance();
         $this->postTypeHelper = ProjectPostTypeHelper::getInstance();
         $this->taxonomyHelper = ProjectTaxonomyHelper::getInstance();
-    }
-
-    /**
-     * Register to the required wordpress hooks.
-     */
-    public function register()
-    {
-        $this->translationHelper->loadTextDomain();
-        add_action('init', array($this, 'createPostType'));
-        add_action('init', array($this, 'createTaxonomy'));
     }
 
     /**

@@ -16,5 +16,5 @@ require 'autoload.php';
 /**
  * Set up the plugin.
  */
-$projectService = \JurgenRomeijn\Projects\Service\ProjectService::getInstance();
-$projectService->register();
+$projectPlugin = \JurgenRomeijn\Projects\ProjectPlugin::getInstance();
+$projectPlugin->init();
