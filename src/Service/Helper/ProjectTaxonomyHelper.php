@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
@@ -14,7 +15,6 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
  */
 class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 {
-
     use SingletonTrait;
 
     const SLUG = 'projectTaxonomySlug';
@@ -47,5 +47,4 @@ class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
 
         return $taxonomy;
     }
-
 }

@@ -13,11 +13,9 @@ use JurgenRomeijn\Projects\Model\PostType\Labels;
  */
 interface ProjectLabelHelperInterface
 {
-
     /**
      * Create the labels used for the project post type.
      * @return Labels
      */
     public function createLabels();
-
 }

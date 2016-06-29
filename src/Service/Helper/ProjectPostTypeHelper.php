@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
@@ -15,7 +16,6 @@ use JurgenRomeijn\Projects\Model\Rewrite;
  */
 class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 {
-
     use SingletonTrait;
 
     const SLUG = 'projectPostTypeSlug';
@@ -56,5 +56,4 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
 
         return $projectPostType;
     }
-
 }

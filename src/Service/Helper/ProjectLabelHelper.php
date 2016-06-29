@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
@@ -13,7 +14,6 @@ use JurgenRomeijn\Projects\Model\PostType\Labels;
  */
 class ProjectLabelHelper implements ProjectLabelHelperInterface
 {
-
     use SingletonTrait;
 
     const NAME_SINGULAR      = 'singularName';
@@ -65,5 +65,4 @@ class ProjectLabelHelper implements ProjectLabelHelperInterface
 
         return $labels;
     }
-
 }

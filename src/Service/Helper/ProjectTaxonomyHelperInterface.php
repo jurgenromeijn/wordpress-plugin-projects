@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects\Service\Helper;
+
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
 /**
@@ -12,11 +13,9 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
  */
 interface ProjectTaxonomyHelperInterface
 {
-
     /**
      * Create the project taxonomy.
      * @return Taxonomy
      */
     public function createTaxonomy();
-
 }
