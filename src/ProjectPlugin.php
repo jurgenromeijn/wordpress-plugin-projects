@@ -4,6 +4,7 @@
  */
 
 namespace JurgenRomeijn\Projects;
+
 use JurgenRomeijn\Projects\Controller\ProjectController;
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 
@@ -13,7 +14,6 @@ use JurgenRomeijn\Projects\Util\SingletonTrait;
  */
 class ProjectPlugin
 {
-
     use SingletonTrait;
 
     private $projectController;
