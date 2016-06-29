@@ -3,8 +3,9 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Service\Helper;
+namespace JurgenRomeijn\Projects\Service\Factory;
 
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
@@ -14,7 +15,7 @@ use JurgenRomeijn\Projects\Model\Rewrite;
  * This helper contains all functionality to create the post type for a project.
  * @package JurgenRomeijn\Projects\Service\Helper
  */
-class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
+class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
 {
     use SingletonTrait;
 
@@ -30,7 +31,7 @@ class ProjectPostTypeHelper implements ProjectPostTypeHelperInterface
     private function __construct()
     {
         $this->translationHelper = TranslationHelper::getInstance();
-        $this->labelHelper = ProjectLabelHelper::getInstance();
+        $this->labelHelper = ProjectLabelFactory::getInstance();
     }
 
     /**

@@ -3,8 +3,9 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Service\Helper;
+namespace JurgenRomeijn\Projects\Service\Factory;
 
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
 use JurgenRomeijn\Projects\Util\SingletonTrait;
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
@@ -13,7 +14,7 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
  * This helper contains all functionality to create the taxonomy for a project.
  * @package JurgenRomeijn\Projects\Service\Helper
  */
-class ProjectTaxonomyHelper implements ProjectTaxonomyHelperInterface
+class ProjectTaxonomyFactory implements ProjectTaxonomyFactoryInterface
 {
     use SingletonTrait;
 

@@ -22,7 +22,7 @@ trait WordpressModelToArrayTrait
 
         foreach ($objectVars as $key => $value) {
             $snakeCaseKey = $this->convertKeyToSnakeCase($key);
-            if (is_object($value) && has_tr) {
+            if (is_object($value)) {
                 $returnArray[$snakeCaseKey] = $value->toArray();
             } elseif ($value != null) {
                 $returnArray[$snakeCaseKey] = $value;
