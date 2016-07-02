@@ -15,7 +15,7 @@ class TranslationHelper implements TranslationHelperInterface
 {
     use SingletonTrait;
 
-    const DOMAIN = "wordpress-plugin-projects";
+    const DOMAIN = 'wordpress-plugin-projects';
     const PATH_LANGUAGES = '/../../../resources/languages/';
 
     /**
