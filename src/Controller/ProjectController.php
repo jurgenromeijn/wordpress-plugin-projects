@@ -35,8 +35,8 @@ class ProjectController
     public function register()
     {
         $this->translationHelper->loadTextDomain();
-        add_action('init', array($this, 'createPostType'));
-        add_action('init', array($this, 'createTaxonomy'));
+        add_action('init', [$this, 'createPostType']);
+        add_action('init', [$this, 'createTaxonomy']);
     }
 
     /**

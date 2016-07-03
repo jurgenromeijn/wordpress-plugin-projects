@@ -39,7 +39,7 @@ class PostType implements WordpressModelInterface
         $hasArchive = true,
         $showInRest = true,
         Rewrite $rewrite = null,
-        array $supports = array()
+        array $supports = []
     ) {
         $this->labels = $labels;
         $this->public = $public;

@@ -18,7 +18,7 @@ trait WordpressModelToArrayTrait
     public function toArray()
     {
         $objectVars = get_object_vars($this);
-        $returnArray = array();
+        $returnArray = [];
 
         foreach ($objectVars as $key => $value) {
             $snakeCaseKey = $this->convertKeyToSnakeCase($key);
