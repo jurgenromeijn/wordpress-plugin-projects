@@ -6,16 +6,16 @@
 namespace JurgenRomeijn\Projects\Model\Taxonomy;
 
 use JurgenRomeijn\Projects\Model\Rewrite;
-use JurgenRomeijn\Projects\Model\WordpressModelInterface;
-use JurgenRomeijn\Projects\Model\WordpressModelToArrayTrait;
+use JurgenRomeijn\Projects\Model\WordPressModelInterface;
+use JurgenRomeijn\Projects\Model\WordPressModelToArrayTrait;
 
 /**
  * This class represents the Taxonomy in wordpress.
  * @package JurgenRomeijn\Projects\Model\Taxonomy
  */
-class Taxonomy implements WordpressModelInterface
+class Taxonomy implements WordPressModelInterface
 {
-    use WordpressModelToArrayTrait;
+    use WordPressModelToArrayTrait;
 
     private $hierarchical;
     private $label;

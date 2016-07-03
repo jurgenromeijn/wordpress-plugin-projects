@@ -9,7 +9,7 @@ namespace JurgenRomeijn\Projects\Model;
  * This trait gives model classes the functionality to convert themselfs to an array format Wordpress can use.
  * @package JurgenRomeijn\Projects\Model
  */
-trait WordpressModelToArrayTrait
+trait WordPressModelToArrayTrait
 {
     /**
      * return an array representation of the internal model.
