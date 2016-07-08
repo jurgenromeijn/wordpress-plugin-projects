@@ -47,13 +47,13 @@ class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
         $projectPostType->setHasArchive(true);
         $projectPostType->setShowInRest(true);
         $projectPostType->setRewrite(new Rewrite($this->translationHelper->translate(self::SLUG)));
-        $projectPostType->setSupports(array(
+        $projectPostType->setSupports([
             SupportOptions::TITLE,
             SupportOptions::EDITOR,
             SupportOptions::THUMBNAIL,
             SupportOptions::EXCERPT,
             SupportOptions::REVISIONS
-        ));
+        ]);
 
         return $projectPostType;
     }

@@ -9,7 +9,7 @@ namespace JurgenRomeijn\Projects\Model;
  * This interface contains methods specifically used for a Wordpress model.
  * @package JurgenRomeijn\Projects\Model
  */
-interface WordpressModelInterface
+interface WordPressModelInterface
 {
     /**
      * Get a represnetation of the model in array format.
