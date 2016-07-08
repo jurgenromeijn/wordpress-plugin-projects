@@ -9,9 +9,9 @@ namespace JurgenRomeijn\Projects\Model;
  * This class contains information about url rewriting.
  * @package JurgenRomeijn\Projects\Model
  */
-class Rewrite implements WordpressModelInterface
+class Rewrite implements WordPressModelInterface
 {
-    use WordpressModelToArrayTrait;
+    use WordPressModelToArrayTrait;
 
     private $slug;
     private $hierarchical;
