@@ -1,7 +1,6 @@
 parameters:
-  translation:
-    domain: wordpress-plugin-projects
-    path: /../../../resources/languages/
+  translation.domain: wordpress-plugin-projects
+  translation.path: /../../../resources/languages/
 
 services:
   project_plugin:
