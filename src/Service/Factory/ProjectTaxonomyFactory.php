@@ -5,8 +5,7 @@
 
 namespace JurgenRomeijn\Projects\Service\Factory;
 
-use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
-use JurgenRomeijn\Projects\Util\SingletonTrait;
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelperInterface;
 use JurgenRomeijn\Projects\Model\Rewrite;
 use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
 
@@ -16,20 +15,18 @@ use JurgenRomeijn\Projects\Model\Taxonomy\Taxonomy;
  */
 class ProjectTaxonomyFactory implements ProjectTaxonomyFactoryInterface
 {
-    use SingletonTrait;
-
     const SLUG = 'projectTaxonomySlug';
     const LABEL = 'projectTaxonomyType';
 
     private $translationHelper;
 
     /**
-     * Set up all required components for this factory.
-     * ProjectTaxonomyHelper constructor.
+     * ProjectTaxonomyFactory constructor.
+     * @param TranslationHelperInterface $translationHelper
      */
-    private function __construct()
+    public function __construct(TranslationHelperInterface $translationHelper)
     {
-        $this->translationHelper = TranslationHelper::getInstance();
+        $this->translationHelper = $translationHelper;
     }
 
     /**
