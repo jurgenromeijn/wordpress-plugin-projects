@@ -1,3 +1,8 @@
+parameters:
+  translation:
+    domain: wordpress-plugin-projects
+    path: /../../../resources/languages/
+
 services:
   project_plugin:
     class: JurgenRomeijn\Projects\ProjectPlugin
@@ -25,3 +30,4 @@ services:
 
   translation_helper:
     class: JurgenRomeijn\Projects\Service\Helper\TranslationHelper
+    arguments: ['%translation.path%', '%translation.domain%']
