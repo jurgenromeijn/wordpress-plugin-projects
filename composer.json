@@ -13,11 +13,24 @@
       "email": "jurgen.romeijn@gmail.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
   "require": {
     "php": ">=5.4",
-    "composer/installers": "~1.0"
+    "johnpbloch/wordpress": "~4.5",
+    "composer/installers": "~1.0",
+    "symfony/dependency-injection": "~2.8",
+    "symfony/config": "~2.8",
+    "symfony/yaml": "~2.8"
   },
   "autoload": {
     "psr-4": {"JurgenRomeijn\\Projects\\": "src/"}
+  },
+  "extra": {
+    "wordpress-install-dir": "wp"
   }
 }

@@ -10,14 +10,21 @@
  *
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Autoload all classes by using the composer auto loader.
+ * Load all components
  */
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+$container = new ContainerBuilder();
+$loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/resources/config'));
+$loader->load('components.yml');
 
 /**
  * Set up the plugin.
  */
-$projectPlugin = \JurgenRomeijn\Projects\ProjectPlugin::getInstance();
+$projectPlugin = $container->get('project_plugin');
 $projectPlugin->init();
