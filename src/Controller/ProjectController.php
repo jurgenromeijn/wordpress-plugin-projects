@@ -5,9 +5,8 @@
 
 namespace JurgenRomeijn\Projects\Controller;
 
-use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
-use JurgenRomeijn\Projects\Service\ProjectService;
-use JurgenRomeijn\Projects\Util\SingletonTrait;
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelperInterface;
+use JurgenRomeijn\Projects\Service\ProjectServiceInterface;
 
 /**
  * Controls the application flow for this plugin.
@@ -15,18 +14,18 @@ use JurgenRomeijn\Projects\Util\SingletonTrait;
  */
 class ProjectController
 {
-    use SingletonTrait;
-
     private $projectService;
     private $translationHelper;
 
     /**
      * ProjectController constructor.
+     * @param ProjectServiceInterface $projectService
+     * @param TranslationHelperInterface $translationHelper
      */
-    private function __construct()
+    private function __construct(ProjectServiceInterface $projectService, TranslationHelperInterface $translationHelper)
     {
-        $this->projectService = ProjectService::getInstance();
-        $this->translationHelper = TranslationHelper::getInstance();
+        $this->projectService = $projectService;
+        $this->translationHelper = $translationHelper;
     }
 
     /**
