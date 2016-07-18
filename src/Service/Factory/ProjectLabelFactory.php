@@ -5,8 +5,7 @@
 
 namespace JurgenRomeijn\Projects\Service\Factory;
 
-use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
-use JurgenRomeijn\Projects\Util\SingletonTrait;
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelperInterface;
 use JurgenRomeijn\Projects\Model\PostType\Labels;
 
 /**
@@ -15,8 +14,6 @@ use JurgenRomeijn\Projects\Model\PostType\Labels;
  */
 class ProjectLabelFactory implements ProjectLabelFactoryInterface
 {
-    use SingletonTrait;
-
     const NAME_SINGULAR      = 'singularName';
     const NAME_PLURAL        = 'name';
     const ADD_NEW            = 'addNew';
@@ -33,13 +30,9 @@ class ProjectLabelFactory implements ProjectLabelFactoryInterface
 
     private $translationHelper;
 
-    /**
-     * Set up all required components for this factory.
-     * ProjectLabelHelper constructor.
-     */
-    private function __construct()
+    public function __construct(TranslationHelperInterface $translationHelper)
     {
-        $this->translationHelper = TranslationHelper::getInstance();
+        $this->translationHelper = $translationHelper;
     }
 
     /**

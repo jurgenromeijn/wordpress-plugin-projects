@@ -5,8 +5,7 @@
 
 namespace JurgenRomeijn\Projects\Service\Factory;
 
-use JurgenRomeijn\Projects\Service\Helper\TranslationHelper;
-use JurgenRomeijn\Projects\Util\SingletonTrait;
+use JurgenRomeijn\Projects\Service\Helper\TranslationHelperInterface;
 use JurgenRomeijn\Projects\Model\PostType\PostType;
 use JurgenRomeijn\Projects\Model\PostType\SupportOptions;
 use JurgenRomeijn\Projects\Model\Rewrite;
@@ -17,21 +16,22 @@ use JurgenRomeijn\Projects\Model\Rewrite;
  */
 class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
 {
-    use SingletonTrait;
-
     const SLUG = 'projectPostTypeSlug';
 
+    private $projectLabelFactory;
     private $translationHelper;
-    private $labelHelper;
 
     /**
-     * Set up all required components for this factory.
-     * ProjectPostTypeHelper constructor.
+     * ProjectPostTypeFactory constructor.
+     * @param TranslationHelperInterface $translationHelper
+     * @param ProjectLabelFactoryInterface $projectLabelFactory
      */
-    private function __construct()
-    {
-        $this->translationHelper = TranslationHelper::getInstance();
-        $this->labelHelper = ProjectLabelFactory::getInstance();
+    public function __construct(
+        ProjectLabelFactoryInterface $projectLabelFactory,
+        TranslationHelperInterface $translationHelper
+    ) {
+        $this->projectLabelFactory = $projectLabelFactory;
+        $this->translationHelper = $translationHelper;
     }
 
     /**
@@ -42,7 +42,7 @@ class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
     {
         $projectPostType = new PostType();
 
-        $projectPostType->setLabels($this->labelHelper->createLabels());
+        $projectPostType->setLabels($this->projectLabelFactory->createLabels());
         $projectPostType->setPublic(true);
         $projectPostType->setHasArchive(true);
         $projectPostType->setShowInRest(true);

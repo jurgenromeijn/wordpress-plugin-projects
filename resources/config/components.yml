@@ -1,0 +1,32 @@
+parameters:
+  translation.domain: wordpress-plugin-projects
+  translation.path: /../../../resources/languages/
+
+services:
+  project_plugin:
+    class: JurgenRomeijn\Projects\ProjectPlugin
+    arguments: [@project_controller]
+
+  project_controller:
+    class: JurgenRomeijn\Projects\Controller\ProjectController
+    arguments: [@project_service, @translation_helper]
+
+  project_service:
+    class: JurgenRomeijn\Projects\Service\ProjectService
+    arguments: [@project_post_type_factory, @project_taxonomy_factory]
+
+  project_label_factory:
+    class: JurgenRomeijn\Projects\Service\Factory\ProjectLabelFactory
+    arguments: [@translation_helper]
+
+  project_post_type_factory:
+    class: JurgenRomeijn\Projects\Service\Factory\ProjectPostTypeFactory
+    arguments: [@project_label_factory, @translation_helper]
+
+  project_taxonomy_factory:
+    class: JurgenRomeijn\Projects\Service\Factory\ProjectTaxonomyFactory
+    arguments: [@translation_helper]
+
+  translation_helper:
+    class: JurgenRomeijn\Projects\Service\Helper\TranslationHelper
+    arguments: ['%translation.path%', '%translation.domain%']
