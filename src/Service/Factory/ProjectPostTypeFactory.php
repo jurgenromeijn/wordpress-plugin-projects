@@ -18,8 +18,8 @@ class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
 {
     const SLUG = 'projectPostTypeSlug';
 
-    private $translationHelper;
     private $projectLabelFactory;
+    private $translationHelper;
 
     /**
      * ProjectPostTypeFactory constructor.
@@ -27,11 +27,11 @@ class ProjectPostTypeFactory implements ProjectPostTypeFactoryInterface
      * @param ProjectLabelFactoryInterface $projectLabelFactory
      */
     public function __construct(
-        TranslationHelperInterface $translationHelper,
-        ProjectLabelFactoryInterface $projectLabelFactory
+        ProjectLabelFactoryInterface $projectLabelFactory,
+        TranslationHelperInterface $translationHelper
     ) {
-        $this->translationHelper = $translationHelper;
         $this->projectLabelFactory = $projectLabelFactory;
+        $this->translationHelper = $translationHelper;
     }
 
     /**

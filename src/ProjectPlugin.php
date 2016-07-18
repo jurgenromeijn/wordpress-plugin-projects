@@ -19,7 +19,7 @@ class ProjectPlugin
      * ProjectPlugin constructor.
      * @param ProjectController $projectController
      */
-    private function __construct(ProjectController $projectController)
+    public function __construct(ProjectController $projectController)
     {
         $this->projectController = $projectController;
     }
