@@ -6,7 +6,6 @@
 namespace JurgenRomeijn\Projects;
 
 use JurgenRomeijn\Projects\Controller\ProjectController;
-use JurgenRomeijn\Projects\Util\SingletonTrait;
 
 /**
  * This class bootstraps the entire project plugin.
@@ -14,16 +13,15 @@ use JurgenRomeijn\Projects\Util\SingletonTrait;
  */
 class ProjectPlugin
 {
-    use SingletonTrait;
-
     private $projectController;
 
     /**
      * ProjectPlugin constructor.
+     * @param ProjectController $projectController
      */
-    private function __construct()
+    private function __construct(ProjectController $projectController)
     {
-        $this->projectController = ProjectController::getInstance();
+        $this->projectController = $projectController;
     }
 
     /**
