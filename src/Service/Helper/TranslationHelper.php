@@ -5,26 +5,25 @@
 
 namespace JurgenRomeijn\Projects\Service\Helper;
 
-use JurgenRomeijn\Projects\Util\SingletonTrait;
-
 /**
  * This helper contains all functionality for localization of this plugin.
  * @package JurgenRomeijn\Projects\Service\Helper
  */
 class TranslationHelper implements TranslationHelperInterface
 {
-    use SingletonTrait;
-
-    const DOMAIN         = 'wordpress-plugin-projects';
-    const PATH_LANGUAGES = '/../../../resources/languages/';
+    private $path;
+    private $domain;
 
     /**
-     * Empty private constructor as this is a application wide component.
      * TranslationHelper constructor.
+     * @param string $path
+     * @param string $domain
      */
-    private function __construct()
+    public function __construct($path, $domain)
     {
-        // Do nothing
+        $this->path = $path;
+        $this->domain = $domain;
+        $this->loadTextDomain();
     }
 
     /**
@@ -33,9 +32,9 @@ class TranslationHelper implements TranslationHelperInterface
     public function loadTextDomain()
     {
         load_plugin_textdomain(
-            self::DOMAIN,
+            $this->domain,
             false,
-            dirname(plugin_basename(__FILE__)) . self::PATH_LANGUAGES
+            dirname(plugin_basename(__FILE__)) . $this->path
         );
     }
 
@@ -46,6 +45,6 @@ class TranslationHelper implements TranslationHelperInterface
      */
     public function translate($string)
     {
-        return __($string, self::DOMAIN);
+        return __($string, $this->domain);
     }
 }

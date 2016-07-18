@@ -22,7 +22,7 @@ class ProjectController
      * @param ProjectServiceInterface $projectService
      * @param TranslationHelperInterface $translationHelper
      */
-    private function __construct(ProjectServiceInterface $projectService, TranslationHelperInterface $translationHelper)
+    public function __construct(ProjectServiceInterface $projectService, TranslationHelperInterface $translationHelper)
     {
         $this->projectService = $projectService;
         $this->translationHelper = $translationHelper;
@@ -33,7 +33,6 @@ class ProjectController
      */
     public function register()
     {
-        $this->translationHelper->loadTextDomain();
         add_action('init', [$this, 'createPostType']);
         add_action('init', [$this, 'createTaxonomy']);
     }
