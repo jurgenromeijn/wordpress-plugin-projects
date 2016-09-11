@@ -7,6 +7,7 @@ namespace JurgenRomeijn\Projects\Service;
 
 use JurgenRomeijn\Projects\Service\Factory\ProjectPostTypeFactoryInterface;
 use JurgenRomeijn\Projects\Service\Factory\ProjectTaxonomyFactoryInterface;
+use JurgenRomeijn\Projects\Service\Mapper\ArrayMapperInterface;
 
 /**
  * This class contains the methods that create the post type and taxonomy.
@@ -19,18 +20,22 @@ class ProjectService implements ProjectServiceInterface
 
     private $projectPostTypeFactory;
     private $projectTaxonomyFactory;
+    private $arrayMapper;
 
     /**
      * ProjectService constructor.
      * @param ProjectPostTypeFactoryInterface $projectPostTypeFactory
      * @param ProjectTaxonomyFactoryInterface $projectTaxonomyFactory
+     * @param ArrayMapperInterface $arrayMapper
      */
     public function __construct(
         ProjectPostTypeFactoryInterface $projectPostTypeFactory,
-        ProjectTaxonomyFactoryInterface $projectTaxonomyFactory
+        ProjectTaxonomyFactoryInterface $projectTaxonomyFactory,
+        ArrayMapperInterface $arrayMapper
     ) {
         $this->projectPostTypeFactory = $projectPostTypeFactory;
         $this->projectTaxonomyFactory = $projectTaxonomyFactory;
+        $this->arrayMapper = $arrayMapper;
     }
 
     /**
@@ -39,9 +44,11 @@ class ProjectService implements ProjectServiceInterface
     public function createPostType()
     {
         $projectPostType = $this->projectPostTypeFactory->createPostType();
+        var_dump($this->arrayMapper->toArray($projectPostType));
+        die();
         register_post_type(
             self::PROJECT_POST_TYPE_NAME,
-            $projectPostType->toArray()
+            $this->arrayMapper->toArray($projectPostType)
         );
     }
 
@@ -54,7 +61,7 @@ class ProjectService implements ProjectServiceInterface
         register_taxonomy(
             self::PROJECT_TAXONOMY_NAME,
             self::PROJECT_POST_TYPE_NAME,
-            $projectTaxonomy->toArray()
+            $this->arrayMapper->toArray($projectTaxonomy)
         );
     }
 }
