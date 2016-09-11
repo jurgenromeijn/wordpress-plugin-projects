@@ -13,17 +13,18 @@ class ArrayMapper implements ArrayMapperInterface
 {
     /**
      * Get a representation of an object in array format.
+     * @param $object
      * @return array
      */
-    public function toArray()
+    public function toArray($object)
     {
-        $objectVars = get_object_vars($this);
+        $objectVars = get_object_vars($object);
         $returnArray = [];
 
         foreach ($objectVars as $key => $value) {
             $snakeCaseKey = $this->convertKeyToSnakeCase($key);
             if (is_object($value)) {
-                $returnArray[$snakeCaseKey] = $value->toArray();
+                $returnArray[$snakeCaseKey] = $this->toArray($value);
             } elseif ($value != null) {
                 $returnArray[$snakeCaseKey] = $value;
             }

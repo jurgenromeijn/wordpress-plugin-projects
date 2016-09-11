@@ -13,7 +13,8 @@ interface ArrayMapperInterface
 {
     /**
      * Get a representation of an object in array format.
+     * @param $object
      * @return array
      */
-    public function toArray();
+    public function toArray($object);
 }
