@@ -11,8 +11,8 @@ namespace JurgenRomeijn\Projects\Model;
  */
 class Rewrite
 {
-    private $slug;
-    private $hierarchical;
+    public $slug;
+    public $hierarchical;
 
     /**
      * Rewrite constructor.

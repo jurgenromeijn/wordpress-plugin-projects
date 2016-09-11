@@ -11,19 +11,19 @@ namespace JurgenRomeijn\Projects\Model\PostType;
  */
 class Labels
 {
-    private $name;
-    private $singularName;
-    private $addNew;
-    private $addNewItem;
-    private $editItem;
-    private $newItem;
-    private $allItems;
-    private $viewItem;
-    private $searchItems;
-    private $notFound;
-    private $notFoundInTrash;
-    private $parentItemColon;
-    private $menuName;
+    public $name;
+    public $singularName;
+    public $addNew;
+    public $addNewItem;
+    public $editItem;
+    public $newItem;
+    public $allItems;
+    public $viewItem;
+    public $searchItems;
+    public $notFound;
+    public $notFoundInTrash;
+    public $parentItemColon;
+    public $menuName;
     
     /**
      * Labels constructor.

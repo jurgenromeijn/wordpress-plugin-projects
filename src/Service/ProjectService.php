@@ -44,8 +44,6 @@ class ProjectService implements ProjectServiceInterface
     public function createPostType()
     {
         $projectPostType = $this->projectPostTypeFactory->createPostType();
-        var_dump($this->arrayMapper->toArray($projectPostType));
-        die();
         register_post_type(
             self::PROJECT_POST_TYPE_NAME,
             $this->arrayMapper->toArray($projectPostType)

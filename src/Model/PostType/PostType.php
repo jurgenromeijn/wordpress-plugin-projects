@@ -13,12 +13,12 @@ use JurgenRomeijn\Projects\Model\Rewrite;
  */
 class PostType
 {
-    private $labels;
-    private $public;
-    private $hasArchive;
-    private $showInRest;
-    private $rewrite;
-    private $supports;
+    public $labels;
+    public $public;
+    public $hasArchive;
+    public $showInRest;
+    public $rewrite;
+    public $supports;
 
     /**
      * PostType constructor.
