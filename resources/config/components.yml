@@ -13,7 +13,7 @@ services:
 
   project_service:
     class: JurgenRomeijn\Projects\Service\ProjectService
-    arguments: [@project_post_type_factory, @project_taxonomy_factory]
+    arguments: [@project_post_type_factory, @project_taxonomy_factory, @array_mapper]
 
   project_label_factory:
     class: JurgenRomeijn\Projects\Service\Factory\ProjectLabelFactory
@@ -30,3 +30,6 @@ services:
   translation_helper:
     class: JurgenRomeijn\Projects\Service\Helper\TranslationHelper
     arguments: ['%translation.path%', '%translation.domain%']
+
+  array_mapper:
+    class: JurgenRomeijn\Projects\Service\Mapper\ArrayMapper

@@ -3,27 +3,28 @@
  * @author Jurgen Romeijn <jurgen.romeijn@gmail.com>
  */
 
-namespace JurgenRomeijn\Projects\Model;
+namespace JurgenRomeijn\Projects\Service\Mapper;
 
 /**
- * This trait gives model classes the functionality to convert themselfs to an array format Wordpress can use.
- * @package JurgenRomeijn\Projects\Model
+ * A mapper to map objects to arrays.
+ * @package JurgenRomeijn\Projects\Service\Mapper
  */
-trait WordPressModelToArrayTrait
+class ArrayMapper implements ArrayMapperInterface
 {
     /**
-     * return an array representation of the internal model.
+     * Get a representation of an object in array format.
+     * @param $object
      * @return array
      */
-    public function toArray()
+    public function toArray($object)
     {
-        $objectVars = get_object_vars($this);
+        $objectVars = get_object_vars($object);
         $returnArray = [];
 
         foreach ($objectVars as $key => $value) {
             $snakeCaseKey = $this->convertKeyToSnakeCase($key);
             if (is_object($value)) {
-                $returnArray[$snakeCaseKey] = $value->toArray();
+                $returnArray[$snakeCaseKey] = $this->toArray($value);
             } elseif ($value != null) {
                 $returnArray[$snakeCaseKey] = $value;
             }
@@ -41,4 +42,5 @@ trait WordPressModelToArrayTrait
     {
         return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $key));
     }
+
 }
