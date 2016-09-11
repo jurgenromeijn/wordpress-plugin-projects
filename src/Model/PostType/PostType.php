@@ -6,17 +6,13 @@
 namespace JurgenRomeijn\Projects\Model\PostType;
 
 use JurgenRomeijn\Projects\Model\Rewrite;
-use JurgenRomeijn\Projects\Model\WordPressModelInterface;
-use JurgenRomeijn\Projects\Model\WordPressModelToArrayTrait;
 
 /**
  * This class represents the post type in wordpress.
  * @package JurgenRomeijn\Projects\Model\PostType
  */
-class PostType implements WordPressModelInterface
+class PostType
 {
-    use WordPressModelToArrayTrait;
-
     private $labels;
     private $public;
     private $hasArchive;

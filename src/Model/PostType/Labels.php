@@ -5,17 +5,12 @@
 
 namespace JurgenRomeijn\Projects\Model\PostType;
 
-use JurgenRomeijn\Projects\Model\WordPressModelInterface;
-use JurgenRomeijn\Projects\Model\WordPressModelToArrayTrait;
-
 /**
  * This class contains all labels displayed by wordpress for a post type
  * @package JurgenRomeijn\Projects\Model\PostType
  */
-class Labels implements WordPressModelInterface
+class Labels
 {
-    use WordPressModelToArrayTrait;
-
     private $name;
     private $singularName;
     private $addNew;
